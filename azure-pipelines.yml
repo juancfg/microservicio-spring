@@ -26,3 +26,6 @@ steps:
     SonarCloud: 'Sonar Cloud'
     organization: 'ravelly'
     scannerMode: 'Other'
+- task: JMeterInstaller@0
+  inputs:
+    jmeterVersion: '5.4.2'
