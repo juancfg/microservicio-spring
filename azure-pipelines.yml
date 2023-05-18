@@ -25,3 +25,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
+- task: JMeterInstaller@0
+  inputs:
+    jmeterVersion: '5.4.2'
