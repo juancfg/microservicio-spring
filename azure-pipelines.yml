@@ -29,4 +29,4 @@ steps:
     containerRegistry: 'Docker'
     repository: 'devops'
     command: 'buildAndPush'
-    Dockerfile: 'Dockerfile'
+    Dockerfile: '/home/vsts/work/1/s/Dockerfile'
