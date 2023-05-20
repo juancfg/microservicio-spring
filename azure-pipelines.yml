@@ -48,7 +48,7 @@ steps:
     arguments: '-f deployment app.yaml'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
-      command: 'push'
+    command: 'push'
 
 - job: DeployLoadTesting
   dependsOn: Building
