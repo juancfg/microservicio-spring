@@ -29,16 +29,31 @@ steps:
   inputs:
       containerRegistry: 'Docker'
       command: 'login'
-      
+
 - task: Docker@2
   inputs:
       containerRegistry: 'Docker'
-      repository: 'ravellycl/microservicio-spring'
+      repository: 'pzyborg/prueba_azure'
       command: 'build'
       Dockerfile: '**/Dockerfile'
-  
+
 - task: Docker@2
   inputs:
       containerRegistry: 'Docker'
-      repository: 'ravellycl/microservicio-spring'
+      repository: 'pzyborg/prueba_azure'
       command: 'push'
+
+- job: DeployLoadTesting
+  dependsOn: Building
+  pool: 'default'
+  
+steps:
+- task: Kubernetes@1
+  inputs:
+      connectionType: 'None'
+      command: 'apply'
+      arguments: '-f deployment app.yaml'
+      secretType: 'dockerRegistry'
+      containerRegistryType: 'Azure Container Registry'
+
+- script: kubectl port-forward deploy/Test-deployment 8086:8085
