@@ -29,4 +29,4 @@ steps:
     containerRegistry: 'Docker'
     repository: 'devops'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: 'Dockerfile'
