@@ -24,9 +24,21 @@ steps:
 - task: JMeterInstaller@0
   inputs:
     jmeterVersion: '5.4.2'
+
 - task: Docker@2
   inputs:
-    containerRegistry: 'Docker'
-    repository: 'ravellycl / microservicio-spring'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+      containerRegistry: 'Docker'
+      command: 'login'
+      
+- task: Docker@2
+  inputs:
+      containerRegistry: 'Docker'
+      repository: 'ravellycl/microservicio-spring'
+      command: 'build'
+      Dockerfile: '**/Dockerfile'
+  
+- task: Docker@2
+  inputs:
+      containerRegistry: 'Docker'
+      repository: 'ravellycl/microservicio-spring'
+      command: 'push'
