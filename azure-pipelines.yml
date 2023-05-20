@@ -34,19 +34,10 @@ steps:
       containerRegistry: 'Docker'
       repository: 'ravellycl/microservicio-spring'
       command: 'build'
-      Dockerfile: '**/Dockerfile'
+      Dockerfile: 'Dockerfile'
   
 - task: Docker@2
   inputs:
       containerRegistry: 'Docker'
       repository: 'ravellycl/microservicio-spring'
       command: 'push'
-
-- job: 
-  pool: 'Default'
-  steps:
-  - task: Kubernetes@1
-    inputs:
-      connectionType: 'None'
-      command: 'apply'
-      arguments: '-f deployment-app.yaml'
