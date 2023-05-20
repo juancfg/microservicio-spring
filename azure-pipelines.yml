@@ -25,3 +25,12 @@ steps:
 - task: JMeterInstaller@0
   inputs:
     jmeterVersion: '5.4.2'
+
+- job: 
+  pool: 'Default'
+  steps:
+  - task: Kubernetes@1
+    inputs:
+      connectionType: 'None'
+      command: 'apply'
+      arguments: '-f deployment-app.yaml'
