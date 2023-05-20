@@ -54,7 +54,6 @@ steps:
   dependsOn: Building
   pool: 'default'
   
-steps:
 - task: Kubernetes@1
   inputs:
       connectionType: 'None'
