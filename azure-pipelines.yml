@@ -50,10 +50,6 @@ steps:
     containerRegistryType: 'Azure Container Registry'
 
 
-- job: DeployLoadTesting
-  dependsOn: Building
-  pool: 'default'
-  
 - task: Kubernetes@1
   inputs:
       connectionType: 'None'
