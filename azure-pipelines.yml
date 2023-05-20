@@ -24,6 +24,15 @@ steps:
 - task: JMeterInstaller@0
   inputs:
     jmeterVersion: '5.4.2'
+    
+- stage: Deploy
+  jobs:
+  - job: Deploy
+    displayName: "Deploy"
+    steps:
+    - script: |
+        # Deployment commands
+      displayName: "Deploy the container"
 
 - task: Docker@2
   inputs:
