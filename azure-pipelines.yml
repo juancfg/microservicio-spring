@@ -32,15 +32,16 @@ steps:
 - task: Docker@2
   inputs:
       containerRegistry: 'Docker'
-      repository: 'ravelly/microservicio-spring'
+      repository: 'ravellycl/microservicio-spring'
       command: 'build'
       Dockerfile: '**/Dockerfile'
   
 - task: Docker@2
   inputs:
       containerRegistry: 'Docker'
-      repository: 'ravelly/microservicio-spring'
+      repository: 'ravellycl/microservicio-spring'
       command: 'push'
+
 - job: 
   pool: 'Default'
   steps:
