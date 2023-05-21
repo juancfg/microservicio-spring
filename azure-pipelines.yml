@@ -44,6 +44,7 @@ steps:
   inputs:
       containerRegistry: 'Docker'
       repository: 'ravelly /devops'
+
 - job: 
   pool: 'Default'
   steps:
