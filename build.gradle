@@ -7,7 +7,10 @@ plugins {
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
-
+jacoco {
+	toolVersion = "0.8.8"
+	reportsDirectory = file("$buildDir/jacocoHtml") // Directorio de destino para el informe HTML
+}
 repositories {
 	mavenCentral()
 }
@@ -19,4 +22,11 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+jacocoTestReport {
+	reports {
+		html.enabled = true // Habilitar informe HTML
+		xml.enabled = true // Habilitar informe XML
+		csv.enabled = false // Deshabilitar informe CSV
+	}
 }
