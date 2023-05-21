@@ -48,3 +48,14 @@ jobs:
         containerRegistry: 'Docker'
         repository: 'ravelly /devops'
 
+- job: Job2
+  dependsOn: Job1
+  displayName: 'Job Local'
+  pool:
+    name: Default
+  steps:
+  - task: Kubernetes@1
+    inputs:
+      connectionType: 'None'
+      command: 'apply'
+      arguments: '--force -f deployment-app.yaml'
