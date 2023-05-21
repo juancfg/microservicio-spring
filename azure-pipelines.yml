@@ -52,12 +52,12 @@ steps:
     #vmImage: ubuntu-latest
     name: default
   steps:
-  - task: Kubernetes@1
-    inputs:
-      connectionType: 'None'
-      command: 'apply'
-      arguments: '--force -f deployment-app.yaml'
-      command: 'build'
-      Dockerfile: '**/Dockerfile'
+- task: Kubernetes@1
+  inputs:
+    connectionType: 'None'
+    command: 'apply'
+    arguments: '--force -f deployment-app.yaml'
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
 
 
