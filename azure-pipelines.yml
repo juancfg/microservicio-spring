@@ -45,11 +45,3 @@ steps:
       containerRegistry: 'Docker'
       repository: 'ravelly /devops'
 
-- job: 
-  pool: 'Default'
-  steps:
-  - task: Kubernetes@1
-    inputs:
-      connectionType: 'None'
-      command: 'apply'
-      arguments: '-f deployment-app.yaml'
