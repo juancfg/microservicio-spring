@@ -24,15 +24,6 @@ steps:
 - task: JMeterInstaller@0
   inputs:
     jmeterVersion: '5.4.2'
-    
-- stage: Deploy
-  jobs:
-  - job: Deploy
-    displayName: "Deploy"
-    steps:
-    - script: |
-        # Deployment commands
-      displayName: "Deploy the container"
 
 - task: Docker@2
   inputs:
@@ -42,29 +33,11 @@ steps:
 - task: Docker@2
   inputs:
       containerRegistry: 'Docker'
-      repository: 'ravelly/devops'
+      repository: 'ravelly /devops'
       command: 'build'
       Dockerfile: '**/Dockerfile'
 
 - task: Docker@2
   inputs:
       containerRegistry: 'Docker'
-      repository: 'ravelly/devops'
-- task: Kubernetes@1
-  inputs:
-    connectionType: 'None'
-    command: 'apply'
-    arguments: '-f deployment app.yaml'
-    secretType: 'dockerRegistry'
-    containerRegistryType: 'Azure Container Registry'
-
-
-- task: Kubernetes@1
-  inputs:
-      connectionType: 'None'
-      command: 'apply'
-      arguments: '-f deployment app.yaml'
-      secretType: 'dockerRegistry'
-      containerRegistryType: 'Azure Container Registry'
-
-- script: kubectl port-forward deploy/Test-deployment 8086:8085
+      repository: 'ravelly /devops'
