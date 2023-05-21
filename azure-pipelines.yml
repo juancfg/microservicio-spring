@@ -15,13 +15,6 @@ steps:
     sonarQubeRunAnalysis: false
     spotBugsAnalysis: false
 
-- task: SonarCloudPrepare@1
-  inputs:
-    SonarCloud: 'SonarCloud'
-    organization: 'alushiro'
-    projectKey: 'alushiro_microservicio-spring-v4'
-    projectName: 'microservicio-spring-v4'
-  
 - task: JMeterInstaller@0
   inputs:
     jmeterVersion: '5.4.2'
