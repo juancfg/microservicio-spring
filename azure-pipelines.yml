@@ -21,6 +21,17 @@ steps:
     SonarCloud: 'Sonar Cloud'
     organization: 'ravelly'
     scannerMode: 'Other'
+- task: Gradle@3
+  inputs:
+    gradleWrapperFile: 'gradlew'
+    tasks: 'sonarqube'
+    publishJUnitResults: false
+    javaHomeOption: 'JDKVersion'
+    sonarQubeRunAnalysis: true
+    sqGradlePluginVersionChoice: 'specify'
+    sonarQubeGradlePluginVersion: '3.5.0.2730'
+    spotBugsAnalysis: false
+
 - task: JMeterInstaller@0
   inputs:
     jmeterVersion: '5.4.2'
