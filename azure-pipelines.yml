@@ -49,15 +49,7 @@ steps:
   dependsOn: Job1
   displayName: 'Job Local'
   pool:
-    #vmImage: ubuntu-latest
     name: default
   steps:
-- task: Kubernetes@1
-  inputs:
-    connectionType: 'None'
-    command: 'apply'
-    arguments: '--force -f deployment-app.yaml'
-    command: 'build'
-    Dockerfile: '**/Dockerfile'
 
 
