@@ -16,9 +16,10 @@ steps:
     spotBugsAnalysis: false
 - task: SonarCloudPrepare@1
   inputs:
-    SonarCloud: 'SonarCloud'
+    SonarCloud: 'Sonar Cloud'
     organization: 'ravelly'
-    projectKey: 'ravelly'
+    projectKey: 'ravelly_Proyecto-Final-v2'
+    projectName: 'Proyecto Final v2'
 
 - task: Gradle@3
   inputs:
