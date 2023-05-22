@@ -46,7 +46,7 @@ jobs:
   - task: Docker@2
     inputs:
         containerRegistry: 'Docker'
-        repository: 'ravelly /devops'
+        repository: 'ravellycl/microservicio-spring'
 
 - job: Job2
   dependsOn: Job1
