@@ -17,6 +17,7 @@ jobs:
       javaHomeOption: 'JDKVersion'
       sonarQubeRunAnalysis: false
       spotBugsAnalysis: false
+      
   - task: SonarCloudPrepare@1
     inputs:
       SonarCloud: 'Sonar Cloud'
