@@ -22,6 +22,8 @@ jobs:
     inputs:
       SonarCloud: 'Sonar Cloud'
       organization: 'juancfg'
+      projectKey: 'juancfg_microservicio-spring2'
+      projectName: 'microservicio-spring'
 
 
   - task: Gradle@3
