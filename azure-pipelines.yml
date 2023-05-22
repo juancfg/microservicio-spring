@@ -1,6 +1,6 @@
 
 trigger:
-- feature-ms-FranciscoPeña-mensaje
+- feature-ms-JuanFLores-mensaje
 jobs:
 - job: Job1
   displayName: 'Job Cloud'
@@ -21,9 +21,8 @@ jobs:
   - task: SonarCloudPrepare@1
     inputs:
       SonarCloud: 'Sonar Cloud'
-      organization: 'ravelly'
-      projectKey: 'ravelly_Proyecto-Final-v2'
-      projectName: 'Proyecto Final v2'
+      organization: 'juancfg'
+
 
   - task: Gradle@3
     inputs:
